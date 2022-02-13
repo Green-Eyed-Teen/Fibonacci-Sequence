@@ -3,13 +3,13 @@ Have you heard about [Fibonacci Numbers/Sequence](https://en.wikipedia.org/wiki/
 
 # FAQs
 
-❄ What is way 1?
+❄ **What is way 1?**
 - Let's say that you want the 5th fibonacci number instantly or the 15th one. In this case, you should use way 1.
 
-❄ What is way 2?
+❄ **What is way 2?**
 - Let's say you want to test how good my program works or perhaps you want to go through all fibonacci numbers from the starting (0), till you get tired of it. In this case, you should use way 2.
 
-❄ How to use-
+❄ **How to use-**
 - **To follow the way 1**: type "1" in the terminal after running the file.
 - **To follow the way 2**: type "2" in the terminal after running the file.
 
