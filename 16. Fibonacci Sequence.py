@@ -3,15 +3,12 @@ def particular_num():
     try:
         n = int(input("Which Fibonacci number do you want: "))
     except ValueError:
-        print("Invalid Input!")
-        exit()
+        print("Invalid Input!"), exit()
 
     if n == 0:
-        print(0)
-        exit()
+        print(0), exit()
     elif n == 1:
-        print(1)
-        exit()
+        print(1), exit()
 
     for num in range(n - 1):
         sum1 = previous_result1 + previous_result2
@@ -22,17 +19,20 @@ def particular_num():
 
 def next_num():
     end, num, previous_result1, previous_result2 = False, 0, 1, 0
-    print("First Number: 0")
+    print("First Fib-Number: 0")
     while not end:
         num = previous_result1 + previous_result2
         previous_result1 = previous_result2
         previous_result2 = num
-        print(f"The Next Number: {num}")
+        print(f"The Next Fib-Number: {num}")
         ask = input("Do you want to end the program?\n(y)es! | (n)o!\n> ")
         if ask.lower() == "y":
             end = True
+            print("Hoping you liked the program :)")
+        time.sleep(0.5)
 
 
+import time
 print("Hello! This Program will give you Fibonacci Series!")
 decision = 0
 
