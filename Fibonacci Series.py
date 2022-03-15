@@ -1,9 +1,9 @@
-def particular_num():
-    previous_result1, previous_result2, n, sum1 = 0, 1, 0, 0
-    try:
-        n = int(input("Which Fibonacci number do you want: "))
-    except ValueError:
-        print("Invalid Input!"), exit()
+import pyinputplus as pyip
+import time
+
+def particular_num(previous_result1, previous_result2):
+    n, sum1 = 0, 0
+    n = pyip.inputInt("\nWhich Fibonacci number do you want: ")
 
     if n == 0:
         print(0), exit()
@@ -17,33 +17,28 @@ def particular_num():
     print(sum1)
 
 
-def next_num():
-    end, num, previous_result1, previous_result2 = False, 0, 1, 0
-    print("First Fib-Number: 0")
+def next_num(previous_result1, previous_result2):
+    end, num = False, 0
+    print("\nFirst Fib-Number: 0")
     while not end:
         num = previous_result1 + previous_result2
         previous_result1 = previous_result2
         previous_result2 = num
         print(f"The Next Fib-Number: {num}")
-        ask = input("Do you want to end the program?\n(y)es! | (n)o!\n> ")
+        ask = pyip.inputStr("Do you want to end the program?\n(Y)es! | (N)o!\n> ", allowRegexes=r'y|n|Y|N')
         if ask.lower() == "y":
-            end = True
             print("Hoping you liked the program :)")
+            break
         time.sleep(0.5)
 
 
-import time
 print("Hello! This Program will give you Fibonacci Series!")
-decision = 0
-
-try:
-    decision = int(input("Which way do you want to find your Fibonacci number?\n"
-                         "(1) I've a particular number. Find which fibonacci number is at that number's position\n(2) "
-                         "Keep giving me the next Fibonacci Number. I'll tell when to end (it's annoying\nDecision: "))
-except ValueError:
-    print("Invalid Input!"), exit()
-
+previous_result1, previous_result2 = 1, 0
+decision = pyip.inputInt("\nWhich way do you want to find your Fibonacci number?\n"
+                         "(1) I've a specific number. Find which fibonacci number is at that number's position\n(2)"
+                         " Keep giving me the next Fibonacci Number. I'll say when to end (annoying)"
+                         "\nDecision: ", allowRegexes=r'1|2')
 if decision == 1:
-    particular_num()
+    particular_num(previous_result1, previous_result2)
 elif decision == 2:
-    next_num()
+    next_num(previous_result1, previous_result2)
